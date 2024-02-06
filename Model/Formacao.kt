@@ -1,6 +1,6 @@
 package desafio.Model
 
-class Formacao(val nome: String, var conteudos: MutableList<ConteudoEducacional>) {
+class Formacao(val nome: String, var conteudos: MutableList<ConteudoEducacional>,val nivel: Nivel) {
     val inscritos = mutableMapOf<Int, Usuario>()
 
     fun matricular(usuario: Usuario) {

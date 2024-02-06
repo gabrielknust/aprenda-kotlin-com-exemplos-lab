@@ -13,7 +13,7 @@ fun main() {
         ConteudoEducacional("Aula 2 - Kotlin")
     )
     var position: Int
-    val formacaoKotlin = Formacao("Kotlin", lista)
+    val formacaoKotlin = Formacao("Kotlin", lista, nivel = Nivel.BASICO)
     val formacoes = mutableListOf<Formacao>(formacaoKotlin)
     formacaoKotlin.matricular(teste)
     formacaoKotlin.listarInscritos()
@@ -33,9 +33,9 @@ fun main() {
                 nome = readln()
                 index = verificaAdicional("Deseja adicionar conteúdos a essa formação?")
                 if(index==1){
-                    formacoes.add(Formacao(nome, criaConteudos()))
+                    formacoes.add(Formacao(nome, criaConteudos(), escolheNivel()))
                 }else{
-                    formacoes.add(Formacao(nome, mutableListOf<ConteudoEducacional>()))
+                    formacoes.add(Formacao(nome, mutableListOf<ConteudoEducacional>(), escolheNivel()))
                 }
             }
             2 -> {

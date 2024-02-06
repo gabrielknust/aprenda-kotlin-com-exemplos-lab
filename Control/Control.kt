@@ -4,9 +4,20 @@ import desafio.Model.*
 fun listaFormacoes(formacoes: List<Formacao>) {
     var index: Int = 1
     formacoes.map {
-        println("$index Formação ${it.nome}")
+        println("$index - Formação de nome: ${it.nome} e nivel: ${it.nivel}")
         index++
     }
+}
+
+fun escolheNivel():Nivel{
+    println("Escolha o nivel da formação")
+    var index: Int = 1
+    Nivel.entries.forEach(){
+        println("$index - ${it.name}")
+        index++
+    }
+    val position = readln().toInt()
+    return Nivel.entries[position-1]
 }
 
 fun criaConteudos(): MutableList<ConteudoEducacional> {
